@@ -35,7 +35,54 @@ export const Thead = styled.div`
   background-color: #eff2f7;
 `;
 
-export const DateTD = styled.button`
+export const HeadDateTD = styled.button`
+  display: flex;
+  align-items: center;
+  width: 10%;
+  padding: 10px;
+  text-align: left;
+  cursor: pointer;
+  background-color: transparent;
+  font-weight: 700;
+
+  &:first-letter {
+    text-transform: uppercase;
+  }
+`;
+
+export const HeadTitleTD = styled.button`
+  display: flex;
+  align-items: center;
+  width: 70%;
+  padding: 10px;
+  text-align: left;
+  cursor: pointer;
+  background-color: transparent;
+  font-weight: 700;
+
+  &:first-letter {
+    text-transform: uppercase;
+  }
+`;
+
+export const HeadDomainTD = styled.button`
+  display: flex;
+  align-items: center;
+  width: 20%;
+  padding: 10px;
+  text-align: left;
+  background-color: transparent;
+  cursor: pointer;
+  font-weight: 700;
+
+  &:first-letter {
+    text-transform: uppercase;
+  }
+`;
+
+export const DateTD = styled.div`
+  display: flex;
+  align-items: center;
   width: 10%;
   padding: 10px;
   text-align: left;
@@ -47,7 +94,9 @@ export const DateTD = styled.button`
   }
 `;
 
-export const TitleTD = styled.button`
+export const TitleTD = styled.div`
+  display: flex;
+  align-items: center;
   width: 70%;
   padding: 10px;
   text-align: left;
@@ -59,11 +108,14 @@ export const TitleTD = styled.button`
   }
 `;
 
-export const DomainTD = styled.button`
+export const DomainTD = styled.div`
+  display: flex;
+  align-items: center;
   width: 20%;
   padding: 10px;
   text-align: left;
   background-color: transparent;
+  cursor: pointer;
 
   &:first-letter {
     text-transform: uppercase;

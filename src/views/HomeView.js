@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { News } from 'components';
-import { fetchNews } from 'services/products-api';
 import { usePages, useLoader } from 'hooks';
+import { SectionWrap } from 'UI';
+import { fetchNews } from 'services/products-api';
 
 export const HomeView = () => {
   const [news, setNews] = useState([]);
@@ -17,11 +18,11 @@ export const HomeView = () => {
       .then(data => setNews(data))
       .catch(error => setError(error))
       .finally(() => setIsLoading(isLoading => !isLoading));
-  }, [page, setIsLoading, setTotalPage]);
+  }, [page, setIsLoading]);
 
   return (
-    <>
-      {!error ? isLoading ? 'Loading' : <News news={news} /> : <div>Error</div>}
-    </>
+    <SectionWrap title="News">
+      {!error ? <News news={news} /> : <div>Error</div>}
+    </SectionWrap>
   );
 };

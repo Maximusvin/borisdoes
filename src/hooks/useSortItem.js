@@ -10,7 +10,7 @@ export const useSortItem = (currentList, activeItem, statusToggleFields) => {
     return list.sort((a, b) =>
       toggleTitle
         ? a.title && a.title.localeCompare(b.title)
-        : a.title && b.title.localeCompare(a.title),
+        : b.title && b.title.localeCompare(a.title),
     );
   };
 
@@ -18,7 +18,7 @@ export const useSortItem = (currentList, activeItem, statusToggleFields) => {
     return list.sort((a, b) =>
       toggleDomain
         ? a.domain && a.domain.localeCompare(b.domain)
-        : a.domain && b.domain.localeCompare(a.domain),
+        : b.domain && b.domain.localeCompare(a.domain),
     );
   };
 

@@ -1,11 +1,5 @@
-import { SectionWrap, Table } from 'UI';
+import { Table } from 'UI';
 
-const News = ({ news }) => {
-  return (
-    <SectionWrap title="News">
-      <Table data={news} />
-    </SectionWrap>
-  );
-};
+const News = ({ news }) => <Table data={news} />;
 
 export default News;

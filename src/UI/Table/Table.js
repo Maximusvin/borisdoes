@@ -1,12 +1,16 @@
 import { useState } from 'react';
 import { useDate, useSortItem } from 'hooks';
+import { HiArrowNarrowDown, HiArrowNarrowUp } from 'react-icons/hi';
 import {
   NewsList,
   ListItem,
   Thead,
   DateTD,
   TitleTD,
+  HeadTitleTD,
   DomainTD,
+  HeadDomainTD,
+  HeadDateTD,
 } from './Table.style';
 
 const List = ({ item }) => {
@@ -34,6 +38,7 @@ const Table = ({ data }) => {
     toggleTitle,
     toggleDomain,
   };
+
   const sortItemList = useSortItem(data, activeItem, statusToggleFields);
 
   const getActiveTypeBySort = e => {
@@ -61,15 +66,18 @@ const Table = ({ data }) => {
   return (
     <>
       <Thead>
-        <DateTD name="time" onClick={e => getActiveTypeBySort(e)}>
+        <HeadDateTD name="time" onClick={e => getActiveTypeBySort(e)}>
           Date
-        </DateTD>
-        <TitleTD name="title" onClick={e => getActiveTypeBySort(e)}>
+          {toggleTime ? <HiArrowNarrowDown /> : <HiArrowNarrowUp />}
+        </HeadDateTD>
+        <HeadTitleTD name="title" onClick={e => getActiveTypeBySort(e)}>
           Title
-        </TitleTD>
-        <DomainTD name="domain" onClick={e => getActiveTypeBySort(e)}>
+          {toggleTitle ? <HiArrowNarrowDown /> : <HiArrowNarrowUp />}
+        </HeadTitleTD>
+        <HeadDomainTD name="domain" onClick={e => getActiveTypeBySort(e)}>
           Domain
-        </DomainTD>
+          {toggleDomain ? <HiArrowNarrowDown /> : <HiArrowNarrowUp />}
+        </HeadDomainTD>
       </Thead>
       <NewsList>
         {sortItemList.map(item => (
