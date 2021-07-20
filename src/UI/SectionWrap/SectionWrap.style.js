@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 
 export const Section = styled.div`
-  padding-top: 35px;
-  padding-bottom: 35px;
+  margin: 75px auto 25px;
+  max-width: calc(100vw - 80px);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgb(8 21 66 / 5%);
   background-color: #fff;
-  padding-left: 24px;
-  padding-right: 24px;
-  border: 1px solid rgba(128, 128, 128, 0.4);
-  margin-bottom: 30px;
 `;
 
 export const Title = styled.h3`

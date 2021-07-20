@@ -1,9 +1,9 @@
-import Pagination from '@material-ui/lab/Pagination';
+// import Pagination from '@material-ui/lab/Pagination';
 import { Wrapper } from './PaginationBox.style';
 
 const PaginationBox = ({ count, currentPage, onChangePage }) => (
   <Wrapper>
-    <Pagination
+    {/* <Pagination
       count={count}
       variant="outlined"
       shape="rounded"
@@ -12,7 +12,7 @@ const PaginationBox = ({ count, currentPage, onChangePage }) => (
         onChangePage(pages);
       }}
       page={currentPage}
-    />
+    /> */}
   </Wrapper>
 );
 
