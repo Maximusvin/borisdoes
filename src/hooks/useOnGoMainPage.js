@@ -1,5 +1,5 @@
 import { useLocation, useHistory } from 'react-router-dom';
-import { ROUTE_PATHS } from 'services/route-paths';
+import { ROUTE_PATHS } from 'utils/route-paths';
 
 export const useOnGoMainPage = () => {
   const location = useLocation();

@@ -1,6 +1,6 @@
 import { Route, Switch } from 'react-router-dom';
 import { NotFoundView } from 'views';
-// import { ROUTE_PATHS } from 'services/route-paths';
+// import { ROUTE_PATHS } from 'utils/route-paths';
 
 const App = () => {
   return (
