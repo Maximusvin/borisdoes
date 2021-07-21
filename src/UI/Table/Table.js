@@ -6,11 +6,11 @@ import {
   ListItem,
   Thead,
   DateTD,
-  TitleTD,
   HeadTitleTD,
   DomainTD,
   HeadDomainTD,
   HeadDateTD,
+  ItemLink,
 } from './Table.style';
 
 const List = ({ item }) => {
@@ -19,7 +19,7 @@ const List = ({ item }) => {
   return (
     <ListItem>
       <DateTD>{date}</DateTD>
-      <TitleTD>{item.title}</TitleTD>
+      <ItemLink to={`/item/${item.id}`}>{item.title}</ItemLink>
       <DomainTD>
         <a href={`http://${item.domain}`}>{item.domain}</a>
       </DomainTD>
@@ -79,6 +79,7 @@ const Table = ({ data }) => {
           {toggleDomain ? <HiArrowNarrowDown /> : <HiArrowNarrowUp />}
         </HeadDomainTD>
       </Thead>
+
       <NewsList>
         {sortItemList.map(item => (
           <List key={item.id} item={item} />

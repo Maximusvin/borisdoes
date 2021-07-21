@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const NewsList = styled.ul`
@@ -86,21 +87,6 @@ export const DateTD = styled.div`
   width: 10%;
   padding: 10px;
   text-align: left;
-  cursor: pointer;
-  background-color: transparent;
-
-  &:first-letter {
-    text-transform: uppercase;
-  }
-`;
-
-export const TitleTD = styled.div`
-  display: flex;
-  align-items: center;
-  width: 70%;
-  padding: 10px;
-  text-align: left;
-  cursor: pointer;
   background-color: transparent;
 
   &:first-letter {
@@ -116,6 +102,21 @@ export const DomainTD = styled.div`
   text-align: left;
   background-color: transparent;
   cursor: pointer;
+
+  &:first-letter {
+    text-transform: uppercase;
+  }
+`;
+
+export const ItemLink = styled(Link)`
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  width: 70%;
+  padding: 10px;
+  text-align: left;
+  cursor: pointer;
+  background-color: transparent;
 
   &:first-letter {
     text-transform: uppercase;

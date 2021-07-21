@@ -22,7 +22,7 @@ export const HomeView = () => {
 
   return (
     <SectionWrap title="News">
-      {!error ? <News news={news} /> : <div>Error</div>}
+      {!error ? <News news={news} isLoading={isLoading} /> : <div>Error</div>}
     </SectionWrap>
   );
 };

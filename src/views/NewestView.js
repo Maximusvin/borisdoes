@@ -23,7 +23,11 @@ export const NewestView = () => {
   return (
     <>
       <SectionWrap title="Newest">
-        {!error ? <Newest newest={newest} /> : <div>Error</div>}
+        {!error ? (
+          <Newest newest={newest} isLoading={isLoading} />
+        ) : (
+          <div>Error</div>
+        )}
       </SectionWrap>
     </>
   );
