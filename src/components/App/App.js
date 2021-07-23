@@ -1,5 +1,13 @@
 import { Route, Switch } from 'react-router-dom';
-import { NotFoundView, HomeView, NewestView, ItemDetailsView } from 'views';
+import {
+  NotFoundView,
+  HomeView,
+  NewestView,
+  ItemDetailsView,
+  AskView,
+  ShowView,
+  JobsView,
+} from 'views';
 import { AppBar } from 'components';
 
 const App = () => {
@@ -8,11 +16,11 @@ const App = () => {
       <AppBar />
       <Switch>
         <Route path="/" exact component={HomeView} />
-        <Route path="/item/:itemId" component={ItemDetailsView} />
         <Route path="/newest" component={NewestView} />
-        <Route path="/ask" component={HomeView} />
-        <Route path="/show" component={HomeView} />
-        <Route path="/jobs" component={HomeView} />
+        <Route path="/ask" component={AskView} />
+        <Route path="/show" component={ShowView} />
+        <Route path="/jobs" component={JobsView} />
+        <Route path="/item/:itemId" component={ItemDetailsView} />
         <Route component={NotFoundView} />
       </Switch>
     </>

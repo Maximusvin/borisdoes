@@ -1,10 +1,13 @@
 import styled from 'styled-components';
 
-export const Article = styled.article`
-  width: 500px;
+export const Wrapper = styled.section`
+  width: 80%;
   margin-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
   padding: 40px;
   background: #fff;
+  border-radius: 10px;
 `;
 
 export const Title = styled.h2`
@@ -13,6 +16,7 @@ export const Title = styled.h2`
   background: #57ba41;
   border-radius: 5px;
   transition: all 0.2s linear;
+  text-align: center;
 `;
 
 export const Location = styled.div`
@@ -20,33 +24,9 @@ export const Location = styled.div`
   align-items: center;
   color: #999;
   font-size: 14px;
-  margin-bottom: 15px;
-`;
-
-export const CardBottom = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-export const CardPrice = styled.span`
-  font-size: 30px;
-  font-weight: 700;
-  line-height: 3rem;
-  color: #303030;
-`;
-
-export const CartButton = styled.button`
-  display: block;
-  cursor: pointer;
-  padding: 10px 15px;
-  background: #57ba41;
-  border-radius: 5px;
-  transition: all 0.2s linear;
-
-  &:hover {
-    background: #e25c1d;
-  }
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #888;
 `;
 
 export const Info = styled.div`
@@ -75,4 +55,19 @@ export const HeaderInfo = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+`;
+
+export const List = styled.ul`
+  margin-bottom: 20px;
+`;
+
+export const Item = styled.li`
+  padding: 15px 0;
+`;
+
+export const CommentHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
 `;

@@ -21,7 +21,7 @@ const List = ({ item }) => {
       <DateTD>{date}</DateTD>
       <ItemLink to={`/item/${item.id}`}>{item.title}</ItemLink>
       <DomainTD>
-        <a href={`http://${item.domain}`}>{item.domain}</a>
+        {item ? <a href={`http://${item.domain}`}>{item.domain}</a> : '-'}
       </DomainTD>
     </ListItem>
   );

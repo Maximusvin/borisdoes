@@ -5,3 +5,6 @@ export { News } from './News';
 export { Newest } from './Newest';
 export { ItemDetails } from './ItemDetails';
 export { Skeleton } from './Skeleton';
+export { Ask } from './Ask';
+export { Show } from './Show';
+export { Jobs } from './Jobs';

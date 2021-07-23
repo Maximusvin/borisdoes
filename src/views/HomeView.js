@@ -1,14 +1,16 @@
 import { useState, useEffect } from 'react';
 import { News } from 'components';
 import { usePages, useLoader } from 'hooks';
-import { SectionWrap } from 'UI';
-import { fetchNews } from 'services/products-api';
+import { SectionWrap, PaginationBox } from 'UI';
+import { fetchNews } from 'services/article-api';
+
+const totalPage = 10;
 
 export const HomeView = () => {
   const [news, setNews] = useState([]);
   const [error, setError] = useState(null);
 
-  const { page, setTotalPage } = usePages();
+  const { page, handleChangePage } = usePages();
   const { isLoading, setIsLoading } = useLoader();
 
   useEffect(() => {
@@ -23,6 +25,14 @@ export const HomeView = () => {
   return (
     <SectionWrap title="News">
       {!error ? <News news={news} isLoading={isLoading} /> : <div>Error</div>}
+
+      {totalPage > 1 && !isLoading && (
+        <PaginationBox
+          count={totalPage}
+          currentPage={page}
+          onChangePage={handleChangePage}
+        />
+      )}
     </SectionWrap>
   );
 };

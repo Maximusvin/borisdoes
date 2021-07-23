@@ -1,31 +1,29 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { fetchCommentById } from 'services/products-api';
+import { fetchCommentById } from 'services/article-api';
 import { ItemDetails } from 'components';
 import { useLoader, useOnGoMainPage } from 'hooks';
 
 export const ItemDetailsView = () => {
-  const [product, setProduct] = useState(null);
+  const [item, setItem] = useState(null);
   const { isLoading, setIsLoading } = useLoader();
   const onGoMainPage = useOnGoMainPage();
 
   const { itemId } = useParams();
 
-  console.log(itemId);
-
   useEffect(() => {
     setIsLoading(isLoading => !isLoading);
 
     fetchCommentById(itemId)
-      .then(setProduct)
+      .then(setItem)
       .finally(() => setIsLoading(isLoading => !isLoading));
   }, [itemId, setIsLoading]);
 
   return (
     <>
-      {product && (
+      {item && (
         <ItemDetails
-          product={product}
+          item={item}
           isLoading={isLoading}
           onGoMainPage={onGoMainPage}
         />

@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Newest } from 'components';
 import { SectionWrap, PaginationBox } from 'UI';
-import { fetchNewest } from 'services/article-api';
+import { fetchAsk } from 'services/article-api';
 import { usePages, useLoader } from 'hooks';
 
-const totalPage = 10;
+const totalPage = 2;
 
-export const NewestView = () => {
-  const [newest, setNews] = useState([]);
+export const AskView = () => {
+  const [ask, setAsk] = useState([]);
   const [error, setError] = useState(null);
 
   const { page, handleChangePage } = usePages();
@@ -16,17 +16,17 @@ export const NewestView = () => {
   useEffect(() => {
     setIsLoading(isLoading => !isLoading);
 
-    fetchNewest(page)
-      .then(data => setNews(data))
+    fetchAsk(page)
+      .then(data => setAsk(data))
       .catch(error => setError(error))
       .finally(() => setIsLoading(isLoading => !isLoading));
   }, [page, setIsLoading]);
 
   return (
     <>
-      <SectionWrap title="Newest">
+      <SectionWrap title="Ask">
         {!error ? (
-          <Newest newest={newest} isLoading={isLoading} />
+          <Newest newest={ask} isLoading={isLoading} />
         ) : (
           <div>Error</div>
         )}

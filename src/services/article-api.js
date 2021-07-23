@@ -45,3 +45,21 @@ export async function fetchAsk(page = 1) {
     return [];
   }
 }
+
+export async function fetchShow(page = 1) {
+  try {
+    const { data } = await axios.get(`${API_ENDPOINTS.SHOW}/${page}.json`);
+    return data;
+  } catch (error) {
+    return [];
+  }
+}
+
+export async function fetchJobs(page = 1) {
+  try {
+    const { data } = await axios.get(`${API_ENDPOINTS.JOBS}/${page}.json`);
+    return data;
+  } catch (error) {
+    return [];
+  }
+}
